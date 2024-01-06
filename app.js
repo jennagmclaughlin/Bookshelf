@@ -87,6 +87,8 @@ function addBookToBookshelf() {
 
     if(newBookTotalPages < newBookPagesRead) {
         window.alert('Pages read is greater than total pages.');
+    } else if(!newBookTitle, !newBookAuthor) {
+        window.alert('Please fill out all fields.')
     } else {
         bookCounter++;
         myBooks.push(new Book(bookCounter, newBookTitle, newBookAuthor, newBookPagesRead, newBookTotalPages, newBookStatus));
