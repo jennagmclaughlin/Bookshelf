@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main>
+        <section id="bookshelf">
+            <h2>Bookshelf</h2>
+            <div class="books"></div>
+        </section>
+        <section id="newBook">
+            <h2>Add to bookshelf</h2>
+            <form>
+                <label for="bookTitle">Title: &nbsp;</label>
+                <input type="text" id="bookTitle" name="Book title" placeholder="Enter title" />
+                <br><br>
+                <label for="bookAuthor">Author: &nbsp;</label>
+                <input type="text" id="bookAuthor" name="Author" placeholder="Enter author" />
+                <br><br>
+                <label for="totalPages">Total Pages: &nbsp;</label>
+                <input type="number" id="totalPages" name="Total Pages" min="1" placeholder="1" />
+                <br><br>
+                <label for="finished">Finished?: &nbsp;</label>
+                <input type="radio" id="yesFinished" name="finished" /> &nbsp; Yes
+                &nbsp;&nbsp;&nbsp;
+                <input type="radio" id="noFinished" name="finished" /> &nbsp; No
+                <div style="display: none; margin-top: 1rem;">
+                    <label for="pagesRead">Pages Read: &nbsp;</label>
+                    <input type="number" id="pagesRead" name="Pages Read" min="0" placeholder="0" />
+                </div>
+                <button type="button" id="addBook" name="Add Book">Add Book</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

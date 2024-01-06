@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--body-bg: #cccccc;
+	--book-bg: #f1f1f1;
+	--border-radius: 0.5rem;
+	--status: #666666;
+	--transition: 250ms all ease-in;
+}
+
+body {
+	background-color: var(--body-bg);
+	font-family: Helvetica, sans-serif;
+	font-size: 1rem;
+}
+
+main {
+	padding: 1rem;
+}
+
+#bookshelf,
+#newBook {
+	width: min(100% - 1rem, 1200px);
+	padding: 1rem;
+	margin: 0 auto;
+}
+
+#bookshelf {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: var(--border-radius);
+}
+
+#newBook {
+	margin-top: 1rem;
+}
+
+#bookshelf h2,
+#newBook h2 {
+	margin-bottom: 1rem;
+}
+
+.books {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.book {
+	background-color: var(--book-bg);
+	border-radius: 0.5rem;
+	width: 100%;
+	height: 130px;
+	padding: 1rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem 0;
+}
+
+button {
+	background-color: transparent;
+	border: 0px;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: var(--transition);
+}
+
+.status {
+	display: flex;
+	justify-content: space-between;
+	color: var(--status);
+	font-size: 0.9rem;
+}
+
+.finishedBtn {
+	width: auto;
+	text-align: left;
+	position: relative;
+	color: var(--status);
+	font-size: 0.9rem;
+}
+
+.finishedBtn::after {
+	content: '';
+	background-color: var(--status);
+	width: 0%;
+	height: 1px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: var(--transition);
+}
+
+.finishedBtn:hover::after {
+	width: 100%;
+}
+
+.removeBtn {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.removeBtn:hover,
+.removeBtn:focus {
+	color: red;
+}
+
+#addBook {
+	background-color: var(--book-bg);
+	border-radius: var(--border-radius);
+	padding: 0.5rem 1rem;
+	display: block;
+	position: relative;
+	margin-top: 1rem;
+}
+
+#addBook:hover {
+	background-color: var(--body-bg);
+}
+
+input {
+	padding: 0.1rem 0.5rem;
+}
+
+@media (min-width: 700px) {
+	.book {
+		width: calc(50% - 1rem);
+	}
+}
